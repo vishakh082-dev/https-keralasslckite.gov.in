@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSLC Result 2026</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#eef2f5;
+        }
+
+        /* HEADER */
+        .header{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:25px;
+            background:white;
+            padding:20px;
+            border-bottom:3px solid #2b6ca3;
+        }
+
+        /* LEFT SIDE */
+        .logo-side{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+        }
+
+        /* LOGO */
+        .logo{
+            width:75px;
+        }
+
+        /* TEXT UNDER LOGO */
+        .govt-text{
+            margin-top:6px;
+            text-align:center;
+            font-size:11px;
+            line-height:1.4;
+            font-weight:bold;
+            color:#003366;
+        }
+
+        /* RIGHT SIDE */
+        .header-text h1{
+            margin:0;
+            color:green;
+            font-size:42px;
+        }
+
+        .header-text p{
+            margin-top:5px;
+            color:#1a4dab;
+            font-size:15px;
+        }
+
+        /* NAVIGATION */
+        .nav{
+            background:#2b6ca3;
+            color:white;
+            padding:12px 20px;
+            font-size:14px;
+        }
+
+        /* LOGIN BOX */
+        .login-box{
+            display:flex;
+            justify-content:center;
+            margin-top:60px;
+        }
+
+        .form-box{
+            background:white;
+            width:320px;
+            padding:30px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .form-box label{
+            font-size:15px;
+            font-weight:bold;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin-top:8px;
+            margin-bottom:15px;
+            background:#f5f5c6;
+            border:1px solid #ccc;
+            box-sizing:border-box;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#2b6ca3;
+            color:white;
+            border:none;
+            cursor:pointer;
+            font-size:15px;
+        }
+
+        button:hover{
+            background:#184c77;
+        }
+
+        .error{
+            color:red;
+            margin-top:10px;
+            display:none;
+            font-size:14px;
+        }
+
+        /* RESULT PAGE */
+        .result-container{
+            display:none;
+            width:85%;
+            margin:30px auto;
+            background:white;
+            border:1px solid #ccc;
+        }
+
+        .candidate{
+            padding:20px;
+            border-bottom:2px solid #ddd;
+        }
+
+        .candidate table{
+            width:100%;
+        }
+
+        .candidate td{
+            padding:8px;
+        }
+
+        /* TABLE */
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+
+        th{
+            background:#2b6ca3;
+            color:white;
+            padding:12px;
+        }
+
+        td{
+            padding:10px;
+            border:1px solid #ddd;
+        }
+
+        tr:nth-child(even){
+            background:#f2f8ff;
+        }
+
+        /* RESULT BOX */
+        .result-box{
+            margin:20px;
+            padding:15px;
+            background:red;
+            color:white;
+            text-align:center;
+            font-size:18px;
+            font-weight:bold;
+        }
+
+        /* BUTTONS */
+        .actions{
+            text-align:center;
+            margin:20px;
+        }
+
+        .actions button{
+            width:auto;
+            padding:10px 20px;
+            margin:5px;
+        }
+
+        /* FOOTER */
+        .footer{
+            text-align:center;
+            font-size:12px;
+            color:#777;
+            padding:20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+      <!-- LEFT -->
+        <div class="logo-side">
+
+            <img src="LOGO.PNG" class="logo">
+
+            <div class="govt-text">
+                Dept of General Education<br>
+                Government of Kerala
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="header-text">
+
+            <h1>SSLC RESULT - 2026</h1>
+
+            <p>Board of Public Examinations, Kerala</p>
+
+        </div>
+
+    </div>
+
+    <!-- NAV -->
+    <div class="nav">
+        Home | Results | SSLC 2026
+    </div>
+
+    <!-- LOGIN PAGE -->
+    <div class="login-box" id="loginPage">
+
+        <div class="form-box">
+
+            <label>Register Number</label>
+            <input type="text" id="reg">
+
+            <label>Date of Birth</label>
+            <input type="date" id="dob">
+
+            <button onclick="login()">
+                Submit
+            </button>
+
+            <div class="error" id="err">
+                Invalid Register Number or DOB
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RESULT PAGE -->
+    <div class="result-container" id="resultPage">
+
+        <!-- CANDIDATE DETAILS -->
+        <div class="candidate">
+
+            <table>
+
+                <tr>
+                    <td><b>Register Number</b></td>
+                    <td>723566</td>
+
+                    <td><b>Name</b></td>
+                    <td>Athul Biju</td>
+                </tr>
+
+                <tr>
+                    <td><b>Sex</b></td>
+                    <td>Male</td>
+
+                    <td><b>School</b></td>
+                    <td>Holy Family Higher Secondary School, Kattoor</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <!-- MARK TABLE -->
+        <table>
+
+            <tr>
+                <th>Sl No</th>
+                <th>Subject</th>
+                <th>Grade</th>
+            </tr>
+
+            <tr><td>1</td><td>First Language (Paper-I)</td><td>B</td></tr>
+            <tr><td>2</td><td>First Language (Paper-II)</td><td>B+</td></tr>
+            <tr><td>3</td><td>English</td><td>B+</td></tr>
+            <tr><td>4</td><td>Hindi</td><td>B</td></tr>
+            <tr><td>5</td><td>Social Science</td><td>B</td></tr>
+            <tr><td>6</td><td>Physics</td><td>D+</td></tr>
+            <tr><td>7</td><td>Chemistry</td><td>C</td></tr>
+            <tr><td>8</td><td>Biology</td><td>D+</td></tr>
+            <tr><td>9</td><td>Mathematics</td><td>D</td></tr>
+            <tr><td>10</td><td>Information Technology</td><td>A</td></tr>
+
+        </table>
+
+        <!-- RESULT -->
+        <div class="result-box">
+            RESULT : NOT ELIGIBLE FOR HIGHER STUDIES
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="actions">
+
+            <button onclick="window.print()">
+                Print Result
+            </button>
+
+            <button onclick="goBack()">
+                Check Another Result
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        © 2026 Board of Public Examinations, Kerala
+    </div>
+
+    <script>
+
+        function login(){
+
+            let reg = document.getElementById("reg").value;
+            let dob = document.getElementById("dob").value;
+
+            if(reg === "723566" && dob === "2009-12-29"){
+
+                document.getElementById("loginPage").style.display = "none";
+
+                document.getElementById("resultPage").style.display = "block";
+
+            }else{
+
+                document.getElementById("err").style.display = "block";
+
+            }
+
+        }
+
+        function goBack(){
+
+            document.getElementById("loginPage").style.display = "flex";
+
+            document.getElementById("resultPage").style.display = "none";
+
+        }
+
+    </script>
+
+</body>
+
+</html>  
